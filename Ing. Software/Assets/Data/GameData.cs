@@ -9,6 +9,7 @@ public class GameData : MonoBehaviour
     public TokenDataBase tokens;
     public IconDataBase icons;
     public List<string> concepts;
+    public int version;
 
     public Token GetToken(string name)
     {
