@@ -39,20 +39,4 @@ public class GameData : MonoBehaviour
     {
         return tokens.dictionary.Count;
     }
-
-    public List<string> FetchConcepts(int amount)
-    {
-        if (amount > concepts.Count) return null;
-        List<string> list = new List<string>();
-        string c = "";
-        for(int i = 0; i < amount; i++)
-        {
-            do
-            {
-                c = concepts[Random.Range(0, concepts.Count)];
-            } while (list.Contains(c));
-            list.Add(c);
-        }
-        return list;
-    }
 }

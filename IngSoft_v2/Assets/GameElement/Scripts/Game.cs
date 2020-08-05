@@ -11,6 +11,8 @@ public class Game
 
     public int turnLength;
 
+    public int actualTurn;
+
     // Start is called before the first frame update
     void Start()
     {
