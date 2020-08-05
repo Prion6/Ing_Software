@@ -13,6 +13,8 @@ public class Game
 
     public int actualTurn;
 
+    public Round round;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,4 +36,15 @@ public class Game
     {
         return !(players.Count >= minPlayers);
     }
+
+    public int PlayersCount()
+    {
+        return players.Count;
+    }
+}
+
+public enum Round
+{
+    GAME,
+    VOTE
 }

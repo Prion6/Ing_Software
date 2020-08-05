@@ -56,12 +56,42 @@ public class GameManager
         if(Game.actualTurn >= Game.players.Count)
         {
             Game.actualTurn = 0;
-            LoadScene("Voting");
+            if (Game.round == Round.GAME)
+            {
+                Game.round = Round.VOTE;
+                SetVotesToZero();
+                LoadScene("Voting");
+            }
+            else
+            {
+                Game.round = Round.GAME;
+                LoadScene("LeaderBoard");
+            }
         }
         else
         {
-            LoadScene("Game");
+            if (Game.round == Round.VOTE)
+            {
+                LoadScene("Voting");
+            }
+            else
+            {
+                LoadScene("Game");
+            }
         }
+    }
+
+    public void SetVotesToZero()
+    {
+        foreach(Player p in Game.players)
+        {
+            p.votes = 0;
+        }
+    }
+
+    public void Vote(int i)
+    {
+        Game.players[i].votes++;
     }
 
 }
