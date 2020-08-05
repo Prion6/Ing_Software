@@ -14,7 +14,7 @@ public class ConceptPanel : MonoBehaviour
 
     public void Init()
     {
-        List<string> list = GameManager.Instance.Data.FetchConcepts(concepts.Count);
+        List<string> list = GameManager.Instance.FetchConcepts(concepts.Count);
         for(int i = 0; i < concepts.Count; i++)
         {
             concepts[i].text = list[i];
