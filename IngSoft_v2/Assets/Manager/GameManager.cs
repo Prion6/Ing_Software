@@ -59,7 +59,6 @@ public class GameManager
             if (Game.round == Round.GAME)
             {
                 Game.round = Round.VOTE;
-                SetVotesToZero();
                 LoadScene("Voting");
             }
             else
