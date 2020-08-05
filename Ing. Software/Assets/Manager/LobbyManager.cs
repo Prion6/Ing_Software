@@ -66,7 +66,7 @@ public class LobbyManager : MonoBehaviour
 
     public void StartGame()
     {
-        if(GameManager.Instance.game.PlayerMinimumReached())
+        if(GameManager.Instance.Game.PlayerMinimumReached())
             GameManager.LoadScene("Game");
         else
         {

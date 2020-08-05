@@ -10,10 +10,7 @@ public class GameManager
 
     public GameData Data;
 
-    public Game game;
-
-    public static int maxPlayers = 4;
-    public static int minPlayers = 3;
+    public Game Game;
 
     public static void LoadScene(int index)
     {

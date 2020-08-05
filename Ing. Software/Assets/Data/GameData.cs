@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine;
 
-public class GameData
+public class GameData : MonoBehaviour
 {
     public List<PlayerData> players;
     public TokenDataBase tokens;
     public IconDataBase icons;
+    public List<string> concepts;
 
     public Token GetToken(string name)
     {
@@ -35,5 +37,21 @@ public class GameData
     public int TokenAmount()
     {
         return tokens.dictionary.Count;
+    }
+
+    public List<string> FetchConcepts(int amount)
+    {
+        if (amount > concepts.Count) return null;
+        List<string> list = new List<string>();
+        string c = "";
+        for(int i = 0; i < amount; i++)
+        {
+            do
+            {
+                c = concepts[Random.Range(0, concepts.Count)];
+            } while (list.Contains(c));
+            list.Add(c);
+        }
+        return list;
     }
 }

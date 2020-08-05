@@ -6,6 +6,11 @@ public class Game : MonoBehaviour
 {
     public List<Player> players;
 
+    public int maxPlayers;
+    public int minPlayers;
+
+    public int turnLength;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +25,11 @@ public class Game : MonoBehaviour
 
     public bool IsFull()
     {
-        return !(players.Count < GameManager.maxPlayers);
+        return !(players.Count < maxPlayers);
     }
 
     public bool PlayerMinimumReached()
     {
-        return !(players.Count >= GameManager.minPlayers);
+        return !(players.Count >= minPlayers);
     }
 }
