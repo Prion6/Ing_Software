@@ -26,8 +26,8 @@ public class SearchPanel : MonoBehaviour
     public void Fill(int i)
     {
         PlayerData p = GameManager.Instance.Data.players[i];
-        icon = GameManager.Instance.Data.GetIcon(p.icon);
-        token = GameManager.Instance.Data.GetToken(p.token).icon;
+        icon.sprite = GameManager.Instance.Data.GetIcon(p.icon);
+        token.sprite = GameManager.Instance.Data.GetToken(p.token).icon;
         playerName.text = p.name;
     }
 

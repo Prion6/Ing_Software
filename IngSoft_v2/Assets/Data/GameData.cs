@@ -11,6 +11,16 @@ public class GameData : MonoBehaviour
     public List<string> concepts;
     public int version;
 
+    public void Start()
+    {
+        players = DataManager.NewData<List<PlayerData>>("Data");
+    }
+
+    public void SaveData()
+    {
+        DataManager.SaveData<List<PlayerData>>(players,"Data");
+    }
+
     public Token GetToken(string name)
     {
         return tokens.dictionary[name];
@@ -21,7 +31,7 @@ public class GameData : MonoBehaviour
         return tokens.tokens[index];
     }
 
-    public Image GetIcon(string name)
+    public Sprite GetIcon(string name)
     {
         return icons.dictionary[name];
     }
@@ -40,3 +50,4 @@ public class GameData : MonoBehaviour
         return tokens.dictionary.Count;
     }
 }
+

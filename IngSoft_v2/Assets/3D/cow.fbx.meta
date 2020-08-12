@@ -1,15 +1,19 @@
 fileFormatVersion: 2
-guid: 79d1a9ed7889f2a45a4dee9606d38f77
+guid: 1bfb16975ba15d243b383b903e9ef5e7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: gold__gold_jpg
-    2100002: coin-texture__coin-texture_jpg
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder
+    100000: CINEMA_4D_Editor
+    100002: //RootNode
+    100004: grp1
+    400000: CINEMA_4D_Editor
+    400002: //RootNode
+    400004: grp1
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
+    2300000: grp1
+    3300000: grp1
+    4300000: grp1
   externalObjects: {}
   materials:
     importMaterials: 1

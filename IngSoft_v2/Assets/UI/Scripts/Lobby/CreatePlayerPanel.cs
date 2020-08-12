@@ -31,28 +31,28 @@ public class CreatePlayerPanel : MonoBehaviour
     {
         iconIndex++;
         iconIndex = iconIndex % GameManager.Instance.Data.IconAmount();
-        icon = GameManager.Instance.Data.GetIcon(iconIndex).icon;
+        icon.sprite = GameManager.Instance.Data.GetIcon(iconIndex).icon;
     }
 
     public void PrevIcon()
     {
         iconIndex--;
         if (iconIndex < 0) iconIndex = iconIndex + GameManager.Instance.Data.IconAmount();
-        icon = GameManager.Instance.Data.GetIcon(iconIndex).icon;
+        icon.sprite = GameManager.Instance.Data.GetIcon(iconIndex).icon;
     }
 
     public void NextToken()
     {
         tokenIndex++;
         tokenIndex = tokenIndex % GameManager.Instance.Data.TokenAmount();
-        token = GameManager.Instance.Data.GetToken(tokenIndex).icon;
+        token.sprite = GameManager.Instance.Data.GetToken(tokenIndex).icon;
     }
 
     public void PrevToken()
     {
         tokenIndex--;
         if (tokenIndex < 0) tokenIndex = tokenIndex + GameManager.Instance.Data.TokenAmount();
-        token = GameManager.Instance.Data.GetToken(tokenIndex).icon;
+        token.sprite = GameManager.Instance.Data.GetToken(tokenIndex).icon;
     }
 
     public void Back()

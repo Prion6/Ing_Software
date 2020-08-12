@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
+[CreateAssetMenu(menuName = "DataBase/Token")]
 public class TokenDataBase : ScriptableObject
 {
     public List<Token> tokens;
@@ -23,5 +24,5 @@ public struct Token
 {
     public string name;
     public GameObject token;
-    public Image icon;
+    public Sprite icon;
 }

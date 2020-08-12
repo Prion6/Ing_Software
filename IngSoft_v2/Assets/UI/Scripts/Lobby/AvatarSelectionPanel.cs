@@ -32,8 +32,8 @@ public class AvatarSelectionPanel : MonoBehaviour
 
     public void Fill(PlayerData player)
     {
-        playerIcon = GameManager.Instance.Data.GetIcon(player.icon);
-        playerToken = GameManager.Instance.Data.GetToken(player.token).icon;
+        playerIcon.sprite = GameManager.Instance.Data.GetIcon(player.icon);
+        playerToken.sprite = GameManager.Instance.Data.GetToken(player.token).icon;
         playerName.text = player.name;
         emptyPanel.gameObject.SetActive(false);
         fullPanel.gameObject.SetActive(true);

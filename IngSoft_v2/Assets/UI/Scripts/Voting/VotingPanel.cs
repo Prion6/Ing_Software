@@ -10,7 +10,7 @@ public class VotingPanel : MonoBehaviour
 
     public void Init(PlayerData data)
     {
-        icon = GameManager.Instance.Data.GetIcon(data.icon);
+        icon.sprite = GameManager.Instance.Data.GetIcon(data.icon);
         playerName.text = data.name;
     }
 }

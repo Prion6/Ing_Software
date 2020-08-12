@@ -587,9 +587,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  tokens: {fileID: 0}
-  icons: {fileID: 0}
-  concepts: []
+  tokens: {fileID: 11400000, guid: cd2eb4e6f443eaa429ef18efa3d925fd, type: 2}
+  icons: {fileID: 11400000, guid: 2ebe08a1b761dac459700e8182fcc4f7, type: 2}
+  concepts:
+  - Frio
+  - Nublado
+  - Caluroso
+  - Miedo
+  - Amplio
+  - DejaVu
+  - Aterrador
+  - Kawai
+  - Soporoso
+  - Arrebol
+  - Petricor
+  - "Ef\xEDmero"
+  - Serendipia
+  - Irirdiscente
+  - Titlante
+  - Mangata
+  - "Ram\xE9"
+  - Ataraxia
+  - Epifania
+  - "Id\xEDlico"
+  - Ambedo
+  - Melifluo
+  - Inefable
+  - Kenopsia
+  - "Frenes\xED"
+  - Evoca
+  - Lozano
+  - Silencioso
+  - "M\xE1gico"
+  - Niebla
   version: 0
 --- !u!1 &1558171394
 GameObject:

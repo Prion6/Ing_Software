@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fb1d4d1be82944db8713145290d195, type: 3}
+  m_Name: Tokens
+  m_EditorClassIdentifier: 
+  tokens:
+  - name: Cat
+    token: {fileID: 276865996092960743, guid: 324b5c3a047dcd040be96321e0e57b6d, type: 3}
+    icon: {fileID: 21300000, guid: 506d8397543ef6f4190963e8542ff504, type: 3}
+  - name: Cow
+    token: {fileID: 2727908453155828916, guid: 44f2e67208a890144abd5722f298912f, type: 3}
+    icon: {fileID: 21300000, guid: c0c45366c925dae4c983383af85c3865, type: 3}
+  - name: Deer
+    token: {fileID: 2475150530314095178, guid: 330aef6faceb6934da19379e20076a34, type: 3}
+    icon: {fileID: 21300000, guid: cda2ff86ee61ea347801bb14805b4411, type: 3}
+  - name: Goat
+    token: {fileID: 2274243386859406989, guid: 7d4e80f2a00de3245a5cf3dd3c74db71, type: 3}
+    icon: {fileID: 21300000, guid: 4f544b7955ddea44dba615a95de692d0, type: 3}
+  - name: Rat
+    token: {fileID: 4698696491174590561, guid: 4f09ebaf220a2d341a57b2cad3d9ab45, type: 3}
+    icon: {fileID: 21300000, guid: b7a9f4dc15efaa347bea0fff1ebc3107, type: 3}
+  - name: Wolf
+    token: {fileID: 460114477102734699, guid: e22939e262521644981f3ff7536ab2eb, type: 3}
+    icon: {fileID: 21300000, guid: 579174d6b0d0634439a3bcaa3a80ef98, type: 3}

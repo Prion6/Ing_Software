@@ -61,13 +61,17 @@ public class LobbyManager : MonoBehaviour
 
     public void Back()
     {
+        GameManager.Instance.Data.SaveData();
         GameManager.LoadScene("MainMenu");
     }
 
     public void StartGame()
     {
-        if(GameManager.Instance.Game.PlayerMinimumReached())
+        if (GameManager.Instance.Game.PlayerMinimumReached())
+        {
+            GameManager.Instance.Data.SaveData();
             GameManager.LoadScene("Game");
+        }
         else
         {
             StartCoroutine(Disclaimer());

@@ -3,10 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
+[CreateAssetMenu(menuName = "DataBase/Icon")]
 public class IconDataBase : ScriptableObject
 {
     public List<Icon> icons;
-    public Dictionary<string,Image> dictionary = new Dictionary<string, Image>();
+    public Dictionary<string,Sprite> dictionary = new Dictionary<string, Sprite>();
 
     public void Load()
     {
@@ -21,6 +22,6 @@ public class IconDataBase : ScriptableObject
 public struct Icon
 {
     public string name;
-    public Image icon;
+    public Sprite icon;
 }
 
