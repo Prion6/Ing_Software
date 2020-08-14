@@ -32,7 +32,7 @@ public class LeaderBoardManager : MonoBehaviour
             }
             tokens[i].gameObject.SetActive(true);
             tokens[i].Init(GameManager.Instance.Data.GetToken(p.data.token).token);
-            tokens[i].transform.position = tokens[i].transform.forward * p.score;
+            tokens[i].transform.position += tokens[i].transform.forward * p.score;
         }
         winner.score++;
         if(winner.score >= 10)
@@ -41,12 +41,12 @@ public class LeaderBoardManager : MonoBehaviour
             panel.gameObject.SetActive(true);
             panel.Init(winner.data);
         }
+        toMove.Move();
     }
 
     // Update is called once per frame
     void Update()
     {
-        toMove.Move(toMove.GetStep());
     }
 
     public void NextRound()

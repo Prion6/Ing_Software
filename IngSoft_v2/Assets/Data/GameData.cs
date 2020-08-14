@@ -14,6 +14,9 @@ public class GameData : MonoBehaviour
     public void Start()
     {
         players = DataManager.NewData<List<PlayerData>>("Data");
+        icons.Load();
+        tokens.Load();
+        GameManager.Instance.Data = this;
     }
 
     public void SaveData()

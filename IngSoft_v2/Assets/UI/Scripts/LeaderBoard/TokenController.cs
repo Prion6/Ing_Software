@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class TokenController : MonoBehaviour
 {
-
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     public void Init(GameObject go)
     {
-        Instantiate(go,transform.position,go.transform.rotation);
+        GameObject g = Instantiate(go,transform.position,go.transform.rotation);
+        g.transform.SetParent(transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    public void Move(Vector3 v)
+    public void Move()
     {
-        transform.position = Vector3.Lerp(transform.position, v, Time.deltaTime);
+        StartCoroutine(RMove());
     }
 
-    public Vector3 GetStep()
+    IEnumerator RMove()
     {
-        return transform.position + transform.forward;
+        Vector3 pos = transform.position + transform.forward;
+        pos = new Vector3(transform.position.x, transform.position.y, pos.z);
+        while(Vector3.Distance(pos,transform.position) > 0.1)
+        {
+            transform.position = Vector3.Lerp(transform.position, pos, speed*Time.deltaTime);
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

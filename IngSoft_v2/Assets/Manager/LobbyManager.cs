@@ -19,7 +19,7 @@ public class LobbyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.Instance.Game = new Game();
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public class LobbyManager : MonoBehaviour
 
     public void AddAvatarPanel(PlayerData data)
     {
+        if (!GameManager.Instance.Game.AddPlayer(data)) return;
         selectedPanel.Fill(data);
         foreach(AvatarSelectionPanel p in avatarPanels)
         {
@@ -52,6 +53,8 @@ public class LobbyManager : MonoBehaviour
     public void SearchOldOption(AvatarSelectionPanel panel)
     {
         selectedPanel = panel;
+        mainView.SetActive(false);
+        searchView.SetActive(true);
     }
 
     public void TurnMainView(bool b)

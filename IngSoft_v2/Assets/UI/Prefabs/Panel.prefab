@@ -915,7 +915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyPanel: {fileID: 2453858064447645997}
-  fullPanel: {fileID: 7025293754343060623}
+  fullPanel: {fileID: 372663075323654152}
   playerIcon: {fileID: 6508237814807256178}
   playerToken: {fileID: 5690530458628697695}
   playerName: {fileID: 892307708085659066}

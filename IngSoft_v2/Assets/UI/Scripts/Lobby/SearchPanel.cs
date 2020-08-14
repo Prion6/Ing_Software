@@ -14,7 +14,10 @@ public class SearchPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerData p = GameManager.Instance.Data.players[0];
+        icon.sprite = GameManager.Instance.Data.GetIcon(p.icon);
+        token.sprite = GameManager.Instance.Data.GetToken(p.token).icon;
+        playerName.text = p.name;
     }
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class SearchPanel : MonoBehaviour
     public void Prev()
     {
         index--;
-        if (index < 0) index = index + GameManager.Instance.Data.players.Count;
+        if (index < 0) index = index + (GameManager.Instance.Data.players.Count - 1);
         Fill(index);
     }
 

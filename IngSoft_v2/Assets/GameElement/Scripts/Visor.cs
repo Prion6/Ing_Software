@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Visor : MonoBehaviour
+public class Visor : DefaultTrackableEventHandler
 {
-    public Texture texture;
     public Material material;
+    public GameObject conceptpanel;
+    public GameObject timerPanel;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnTrackingFound()
     {
-        material.mainTexture = texture;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnTrackingFound();
+        Skybox skybox = FindObjectOfType<Skybox>();
+        skybox.material = material;
+        Camera cam = skybox.gameObject.GetComponent<Camera>();
+        cam.clearFlags = CameraClearFlags.Skybox;
+        Debug.Log(cam.gameObject.name);
+        conceptpanel.SetActive(true);
+        timerPanel.SetActive(true);
     }
 }

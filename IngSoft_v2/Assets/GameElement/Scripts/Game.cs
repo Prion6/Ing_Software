@@ -15,16 +15,14 @@ public class Game
 
     public Round round;
 
-    // Start is called before the first frame update
-    void Start()
+    public Game()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        maxPlayers = 5;
+        minPlayers = 3;
+        turnLength = 60;
+        actualTurn = 0;
+        players = new List<Player>();
+        round = Round.GAME;
     }
 
     public bool IsFull()
@@ -34,12 +32,37 @@ public class Game
 
     public bool PlayerMinimumReached()
     {
-        return !(players.Count >= minPlayers);
+        return (players.Count >= minPlayers);
     }
 
     public int PlayersCount()
     {
         return players.Count;
+    }
+
+    public bool AddPlayer(PlayerData data)
+    {
+        foreach(Player p in players)
+        {
+            if(p.data.Equals(data))
+            {
+                return false;
+            }
+        }
+        players.Add(new Player(data));
+        return true;
+    }
+
+    public void RemovePlayer(PlayerData data)
+    {
+        for(int i = 0; i < players.Count; i++)
+        {
+            if (players[i].data.Equals(data))
+            {
+                players.RemoveAt(i);
+                return;
+            }
+        }
     }
 }
 

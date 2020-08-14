@@ -27,6 +27,7 @@ public class VoteManager : MonoBehaviour
     public void Vote(int i)
     {
         GameManager.Instance.Vote(i);
+        GameManager.Instance.NextTurn();
     }
 
     public void EndTurn()

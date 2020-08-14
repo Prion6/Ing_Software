@@ -7,7 +7,7 @@ public class CreatePlayerPanel : MonoBehaviour
 {
     public Image icon;
     public Image token;
-    public Text playerName;
+    public InputField playerName;
 
     int iconIndex;
     int tokenIndex;
@@ -18,7 +18,10 @@ public class CreatePlayerPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log(GameManager.Instance);
+        Debug.Log(GameManager.Instance.Data);
+        icon.sprite = GameManager.Instance.Data.GetIcon(0).icon;
+        token.sprite = GameManager.Instance.Data.GetToken(0).icon;
     }
 
     // Update is called once per frame
@@ -31,6 +34,8 @@ public class CreatePlayerPanel : MonoBehaviour
     {
         iconIndex++;
         iconIndex = iconIndex % GameManager.Instance.Data.IconAmount();
+        Debug.Log(GameManager.Instance);
+        Debug.Log(GameManager.Instance.Data);
         icon.sprite = GameManager.Instance.Data.GetIcon(iconIndex).icon;
     }
 

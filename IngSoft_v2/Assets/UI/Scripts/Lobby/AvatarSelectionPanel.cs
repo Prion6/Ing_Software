@@ -14,11 +14,14 @@ public class AvatarSelectionPanel : MonoBehaviour
     public Text playerName;
 
     public LobbyManager manager;
+    public GameObject disclaimer;
+
+    PlayerData data;
 
     public void Empty()
     {
-        playerIcon = null;
-        playerToken = null;
+        playerIcon.sprite = null;
+        playerToken.sprite = null;
         playerName.text = "";
         fullPanel.gameObject.SetActive(false);
         emptyPanel.gameObject.SetActive(true);
@@ -27,16 +30,17 @@ public class AvatarSelectionPanel : MonoBehaviour
     public void TurnOff()
     {
         Empty();
-        gameObject.SetActive(false);
+        GameManager.Instance.Game.RemovePlayer(data);
     }
 
     public void Fill(PlayerData player)
     {
+        data = player;
+        fullPanel.gameObject.SetActive(true);
         playerIcon.sprite = GameManager.Instance.Data.GetIcon(player.icon);
         playerToken.sprite = GameManager.Instance.Data.GetToken(player.token).icon;
         playerName.text = player.name;
         emptyPanel.gameObject.SetActive(false);
-        fullPanel.gameObject.SetActive(true);
     }
 
     public void CreateNewPressed()
@@ -46,7 +50,10 @@ public class AvatarSelectionPanel : MonoBehaviour
 
     public void SearchOldPressed()
     {
-
+        if (GameManager.Instance.Data.players.Count != 0)
+            manager.SearchOldOption(this);
+        else
+            StartCoroutine(Disclaimer());
     }
 
     // Start is called before the first frame update
@@ -59,5 +66,12 @@ public class AvatarSelectionPanel : MonoBehaviour
     void Update()
     {
         
+    }
+
+    IEnumerator Disclaimer()
+    {
+        disclaimer.SetActive(true);
+        yield return new WaitForSeconds(3);
+        disclaimer.SetActive(false);
     }
 }

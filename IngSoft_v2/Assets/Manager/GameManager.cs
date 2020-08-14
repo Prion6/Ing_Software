@@ -47,6 +47,7 @@ public class GameManager
 
     public PlayerData GetPlayerInTurn()
     {
+        Debug.Log(Game.actualTurn);
         return (Game.players[Game.actualTurn]).data;
     }
 
