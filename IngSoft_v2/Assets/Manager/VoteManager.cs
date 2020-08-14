@@ -39,10 +39,4 @@ public class VoteManager : MonoBehaviour
     {
         GameManager.LoadScene("MainMenu");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

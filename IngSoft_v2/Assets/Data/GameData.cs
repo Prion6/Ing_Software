@@ -48,6 +48,7 @@ public class GameData : MonoBehaviour
     {
         return icons.dictionary.Count;
     }
+
     public int TokenAmount()
     {
         return tokens.dictionary.Count;

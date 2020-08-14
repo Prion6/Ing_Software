@@ -19,12 +19,7 @@ public class SearchPanel : MonoBehaviour
         token.sprite = GameManager.Instance.Data.GetToken(p.token).icon;
         playerName.text = p.name;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void Fill(int i)
     {

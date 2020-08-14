@@ -10,12 +10,6 @@ namespace DataSystem
     public static class DataManager
     {
 
-        /// <summary>
-        /// Crea un uevo archivo en la ruta entrega y lo retorna, si el archivo ya exite intentara cargarlo.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="name"></param>
-        /// <returns></returns>
         public static T NewData<T>(string name = "")
         {
             string path = Application.persistentDataPath + "/" + name + "Data.dat";
@@ -36,13 +30,7 @@ namespace DataSystem
                 return newData;
             }
         }
-
-        /// <summary>
-        /// Guarda un archivo, si existe lo sobrescribe, si no, lo crea.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="data"></param>
-        /// <param name="name"></param>
+        
         public static T SaveData<T>(T data,string name = "")
         {
             string path = Application.persistentDataPath + "/" + name + "Data.dat";
@@ -61,13 +49,7 @@ namespace DataSystem
                 return NewData<T>(name);
             }
         }
-
-        /// <summary>
-        /// Carga un archivo guardado, si este no existe o esta corrupto entrega el valor por defecto o nulo
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        
         public static T LoadData<T>(string name = "")
         {
             T instance;

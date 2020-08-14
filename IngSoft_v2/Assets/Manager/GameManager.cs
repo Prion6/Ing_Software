@@ -94,4 +94,24 @@ public class GameManager
         Game.players[i].votes++;
     }
 
+    public void CreateGame()
+    {
+        Game = new Game();
+    }
+
+    public void CreatePlayer(PlayerData data)
+    {
+        if (Data.players.Contains(data)) return;
+        Data.players.Add(data);
+    }
+
+    public bool SetPlayers(List<PlayerData> datas)
+    {
+        if (datas.Count < Game.minPlayers || datas.Count > Game.maxPlayers) return false;
+        foreach(PlayerData d in datas)
+        {
+            Game.AddPlayer(d);
+        }
+        return true;
+    }
 }

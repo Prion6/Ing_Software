@@ -62,6 +62,7 @@ public class LeaderBoardManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        panel.gameObject.SetActive(true);
+        button.gameObject.SetActive(false);
     }
 }

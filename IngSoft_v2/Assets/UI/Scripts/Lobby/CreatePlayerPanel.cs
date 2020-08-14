@@ -24,12 +24,6 @@ public class CreatePlayerPanel : MonoBehaviour
         token.sprite = GameManager.Instance.Data.GetToken(0).icon;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void NextIcon()
     {
         iconIndex++;

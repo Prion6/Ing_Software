@@ -22,10 +22,4 @@ public class TimerPanel : MonoBehaviour
         timer.OnFinish?.AddListener(() => GameManager.Instance.NextTurn());
         timer.Init();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

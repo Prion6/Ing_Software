@@ -15,22 +15,20 @@ public class LobbyManager : MonoBehaviour
     public GameObject searchView;
 
     public GameObject disclaimer;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameManager.Instance.Game = new Game();
-    }
 
-    // Update is called once per frame
-    void Update()
+    public bool isPlayerSelected(PlayerData data)
     {
-        
+        foreach(AvatarSelectionPanel a in avatarPanels)
+        {
+            if (a.data.Equals(data))
+                return true;
+        }
+        return false;
     }
 
     public void AddAvatarPanel(PlayerData data)
     {
-        if (!GameManager.Instance.Game.AddPlayer(data)) return;
+        if (isPlayerSelected(data)) return;
         selectedPanel.Fill(data);
         foreach(AvatarSelectionPanel p in avatarPanels)
         {
@@ -68,9 +66,20 @@ public class LobbyManager : MonoBehaviour
         GameManager.LoadScene("MainMenu");
     }
 
+    public List<PlayerData> GetAvatars()
+    {
+        List<PlayerData> datas = new List<PlayerData>();
+        foreach(AvatarSelectionPanel a in avatarPanels)
+        {
+            if (!a.data.name.Equals(""))
+                datas.Add(a.data);
+        }
+        return datas;
+    }
+
     public void StartGame()
     {
-        if (GameManager.Instance.Game.PlayerMinimumReached())
+        if (GameManager.Instance.SetPlayers(GetAvatars()))
         {
             GameManager.Instance.Data.SaveData();
             GameManager.LoadScene("Game");

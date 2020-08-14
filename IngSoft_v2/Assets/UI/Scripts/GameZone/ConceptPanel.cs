@@ -20,10 +20,4 @@ public class ConceptPanel : MonoBehaviour
             concepts[i].text = list[i];
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

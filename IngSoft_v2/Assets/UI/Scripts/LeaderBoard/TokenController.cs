@@ -5,20 +5,11 @@ using UnityEngine;
 public class TokenController : MonoBehaviour
 {
     public float speed;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     public void Init(GameObject go)
     {
         GameObject g = Instantiate(go,transform.position,go.transform.rotation);
         g.transform.SetParent(transform);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void Move()

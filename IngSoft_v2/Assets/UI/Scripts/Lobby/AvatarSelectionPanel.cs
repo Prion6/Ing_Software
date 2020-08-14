@@ -15,8 +15,13 @@ public class AvatarSelectionPanel : MonoBehaviour
 
     public LobbyManager manager;
     public GameObject disclaimer;
+    
+    public PlayerData data;
 
-    PlayerData data;
+    private void Start()
+    {
+        Empty();
+    }
 
     public void Empty()
     {
@@ -25,6 +30,7 @@ public class AvatarSelectionPanel : MonoBehaviour
         playerName.text = "";
         fullPanel.gameObject.SetActive(false);
         emptyPanel.gameObject.SetActive(true);
+        data = new PlayerData("","","");
     }
 
     public void TurnOff()
@@ -54,18 +60,6 @@ public class AvatarSelectionPanel : MonoBehaviour
             manager.SearchOldOption(this);
         else
             StartCoroutine(Disclaimer());
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator Disclaimer()
